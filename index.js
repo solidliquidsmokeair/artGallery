@@ -1,3 +1,4 @@
+
 const images = [
     {
     id: 1,
@@ -15,3 +16,5 @@ const images = [
     image: '/images/refractedLight.jpg'
 },
 ]
+
+const nextBtn = document.querySelector('nextButton')
