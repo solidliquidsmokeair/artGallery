@@ -34,6 +34,7 @@ const images = [
 
 const activeImage = document.querySelector('#picture')
 const imageName = document.querySelector("#imageName")
+const count = document.querySelector('.count')
 
 const nextBtn = document.querySelector('.nextOne')
 const prevBtn = document.querySelector('.lastOne')
@@ -41,11 +42,13 @@ const prevBtn = document.querySelector('.lastOne')
 
 let show = 0
 
+var counter = 1
+
 //load initial item
 
 window.addEventListener('DOMContentLoaded', function(){
     showPerson()
-
+    console.log(counter)
 })
 
 //show person based on item
@@ -65,6 +68,9 @@ nextBtn.addEventListener('click', function(){
     } else {
         show ++
     }
+    counter = show + 1
+    console.log(counter)
+    count.innerText = counter + '/6'
     showPerson()
 })
 
@@ -74,6 +80,14 @@ prevBtn.addEventListener('click', function(){
     } else {
         show --
     }
+
+    if(counter == 1){
+        counter = 1
+    } else {
+        counter --
+    }
+    
+    count.innerText = counter + '/6'
 
     showPerson()
 })
