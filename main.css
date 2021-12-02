@@ -1,0 +1,10 @@
+.imageFrame {
+    height: 300px;
+    width: 300px;
+    
+}
+
+.picture {
+    max-width: 100%;
+    max-height: 100%;
+}
