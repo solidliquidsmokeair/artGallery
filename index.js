@@ -11,9 +11,9 @@ const images = [
     image: 'images/mobiusStrip.jpg'
 },
 {
-    id: 2,
+    id: 3,
     name: 'refracted light',
-    image: 'images/refractedLight.jpg'
+    image: 'images/refractedLight.png'
 },
 ]
 
@@ -24,18 +24,28 @@ const nextBtn = document.querySelector('#nextButton')
 const prevBtn = document.querySelector('#prevButton')
 
 
-let show = 1
+let show = 2
 
 //load initial item
 
 window.addEventListener('DOMContentLoaded', function(){
-    var item = images[show]
-    imageName.innerText = item.name
-    activeImage.src = item.image
+    showPerson(show)
 
 })
 
-nextBtn.addEventListener("click", function(){
-    show = 1
+//show person based on item
+
+function showPerson(person){
+    const item = images[person]
+    imageName.innerText = item.name
+    activeImage.src = item.image
+}
+
+//prev and next buttons
+
+nextBtn.addEventListener('click', function(){
+    console.log('yopyo')
+    show++
+    showPerson()
 })
 
